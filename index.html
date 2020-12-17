@@ -77,7 +77,7 @@
                             </svg>
                           </div>
                         </div>
-                        <div class="invisible md:visible absolute md:relative w-screen md:w-auto h-auto bg-white mt-64 md:mt-0 transition duration-200 ease-in-out" id="hams">
+                        <div class="invisible md:visible absolute md:relative w-screen md:w-auto h-auto bg-white mt-64 md:mt-0" id="hams">
                           <div class="flex flex-col md:flex-row md:space-x-4 items-center justify-center">
 
                             <a href="#" class="text-pink-reddish hover:text-black px-3 py-2 rounded-md text-sm font-medium">Home</a>
@@ -309,9 +309,9 @@
               </button>
             </div>
             <div class="flex-grow flex space-x-4 h-full overflow-x-scroll mx-auto px-6" id="cards">
-              <div class="p-2 mt-3 w-72 flex-shrink-0">
+              <div class="card">
                 <div class="bg-white">
-                  <div class="border flex-col rounded-t-lg p-3 pb-10 space-y-2">
+                  <div class="card-top">
                     <p class="font-bold">Batch 1</p>
                     <p class="text-gray-500" >Starting from <b>10/11/2020</b></p>
                     <p class="text-gray-500 font-bold">3 sessions</p>
@@ -326,9 +326,9 @@
                   </div>
                 </div>
               </div>
-              <div class="p-2 mt-3 w-72 flex-shrink-0">
+              <div class="card">
                 <div class="bg-white">
-                  <div class="border flex-col rounded-t-lg p-3 pb-10 space-y-2">
+                  <div class="card-top">
                     <p class="font-bold">Batch 1</p>
                     <p class="text-gray-500" >Starting from <b>10/11/2020</b></p>
                     <p class="text-gray-500 font-bold">3 sessions</p>
@@ -343,9 +343,9 @@
                   </div>
                 </div>
               </div>
-              <div class="p-2 mt-3 w-72 flex-shrink-0">
+              <div class="card">
                 <div class="bg-white">
-                  <div class="border flex-col rounded-t-lg p-3 pb-10 space-y-2">
+                  <div class="card-top">
                     <p class="font-bold">Batch 1</p>
                     <p class="text-gray-500" >Starting from <b>10/11/2020</b></p>
                     <p class="text-gray-500 font-bold">3 sessions</p>
@@ -360,9 +360,9 @@
                   </div>
                 </div>
               </div>
-              <div class="p-2 mt-3 w-72 flex-shrink-0">
+              <div class="card">
                 <div class="bg-white">
-                  <div class="border flex-col rounded-t-lg p-3 pb-10 space-y-2">
+                  <div class="card-top">
                     <p class="font-bold">Batch 1</p>
                     <p class="text-gray-500" >Starting from <b>10/11/2020</b></p>
                     <p class="text-gray-500 font-bold">3 sessions</p>
@@ -377,9 +377,9 @@
                   </div>
                 </div>
               </div>
-              <div class="p-2 mt-3 w-72 flex-shrink-0">
+              <div class="card">
                 <div class="bg-white">
-                  <div class="border flex-col rounded-t-lg p-3 pb-10 space-y-2">
+                  <div class="card-top">
                     <p class="font-bold">Batch 1</p>
                     <p class="text-gray-500" >Starting from <b>10/11/2020</b></p>
                     <p class="text-gray-500 font-bold">3 sessions</p>
@@ -394,9 +394,9 @@
                   </div>
                 </div>
               </div>
-              <div class="p-2 mt-3 w-72 flex-shrink-0">
+              <div class="card">
                 <div class="bg-white">
-                  <div class="border flex-col rounded-t-lg p-3 pb-10 space-y-2">
+                  <div class="card-top">
                     <p class="font-bold">Batch 1</p>
                     <p class="text-gray-500" >Starting from <b>10/11/2020</b></p>
                     <p class="text-gray-500 font-bold">3 sessions</p>
@@ -611,7 +611,16 @@
 
         function hamburger() {  
           const hams = document.getElementById('hams');
-          hams.classList.toggle('invisible');
+          if(hams.classList.contains('invisible'))
+          {
+             hams.classList.remove('invisible');
+             hams.classList.add('visible','animate-bounceOnce');
+          }
+          else
+          {
+            hams.classList.remove('visible','animate-bounceOnce');
+            hams.classList.add('invisible');
+          }
         }
 
         function previous() {
